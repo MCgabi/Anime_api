@@ -18,7 +18,7 @@ class CreateAnimesTable extends Migration
             $table->string('title');
             $table->text('description');
             $table->integer('episodes');
-            $table->text('species');
+            $table->text('genres');
             $table->timestamps();
         });
     }

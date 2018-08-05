@@ -11,10 +11,44 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+/*
+* CRUD routes 
+*/
+
+Route::group([
+    'middleware' => 'auth'
+], function (){
+    Route::get('/acrud', [
+        'uses' => 'AnimeController@index',
+        'as' => 'anime.index'
+    ]);
+
+    Route::get('/acrud/create', [
+        'uses' => 'AnimeController@create',
+        'as' => 'anime.create'
+    ]);
+
+    Route::post('/acrud/add', [
+        'uses' => 'AnimeController@add',
+        'as' => 'anime.add'
+    ]);
+
+    Route::get('/acrud/{id}', [
+        'uses' => 'AnimeController@show',
+        'as' => 'anime.show'
+    ]);
+});
+
+/*
+* Main routes 
+*/
+
+Route::group([
+
+], function () {
+
+});

@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Anime;
 
-class HomeController extends Controller
+class AnimeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +14,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $animes = Anime::orderBy('id', 'desc')->paginate(10);
+        return view('crud.index', compact('animes'));
     }
 
     /**
@@ -23,7 +25,12 @@ class HomeController extends Controller
      */
     public function create()
     {
-        //
+        return view('crud.create');
+    }
+
+    public function add(Request $request){
+        Anime::create($request->all());
+        return redirect(route('anime.index'));
     }
 
     /**
@@ -43,9 +50,10 @@ class HomeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Anime $anime)
     {
-        //
+        
+        return view('crud.show', compact('anime'));
     }
 
     /**
