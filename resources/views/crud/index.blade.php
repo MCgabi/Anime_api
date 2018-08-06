@@ -24,8 +24,14 @@
        <th scope="col" class="table-warning">{{ $anime->id }}</th>
        <th scope="col" class="table-warning">{{ $anime->title }}</th>
        <th scope="col" class="table-info"><a href="{{ route('anime.show', $anime) }}" class="btn btn-info">Show</a></th>
-       <th scope="col" class="table-success"><a href="" class="btn btn-success">Edit</a></th>
-       <th scope="col" class="table-danger"><a href="" class="btn btn-danger">Delete</a></th>
+       <th scope="col" class="table-success"><a href="{{ route('anime.edit', $anime) }}" class="btn btn-success">Edit</a></th>
+       <th scope="col" class="table-danger">
+        <form action="{{ route('anime.destroy', $anime) }}" method="post"> 
+          <input type="hidden" value="{{ csrf_token() }}" name="_token">
+          <input type="hidden" value="DELETE" name="_method">
+          <input type="submit" class="btn btn-danger" value="Delete">
+        </form> 
+       </th>
      </tr>
     @endforeach
     

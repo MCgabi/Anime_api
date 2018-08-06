@@ -47,46 +47,47 @@ class AnimeController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  Anime $anime
      * @return \Illuminate\Http\Response
      */
     public function show(Anime $anime)
     {
-        
         return view('crud.show', compact('anime'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  Anime $anime
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Anime $anime)
     {
-        //
+        return view('crud.edit', compact('anime'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  Anime $anime
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Anime $anime)
     {
-        //
+        $anime->update($request->all());
+        return redirect('/acrud');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  Anime $anime
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Anime $anime)
     {
-        //
+        $anime->delete();
+        return redirect('/acrud');
     }
 }

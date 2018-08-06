@@ -37,9 +37,24 @@ Route::group([
         'as' => 'anime.add'
     ]);
 
-    Route::get('/acrud/{id}', [
+    Route::get('/acrud/{anime}', [
         'uses' => 'AnimeController@show',
         'as' => 'anime.show'
+    ]);
+
+    Route::get('/acrud/edit/{anime}', [
+        'uses' => 'AnimeController@edit',
+        'as' => 'anime.edit'
+    ]);
+
+    Route::put('/acrud/update/{anime}', [
+        'uses' => 'AnimeController@update',
+        'as' => 'anime.update'
+    ]);
+
+    Route::delete('/acrud/destroy/{anime}', [
+        'uses' => 'AnimeController@destroy',
+        'as' => 'anime.destroy'
     ]);
 });
 
