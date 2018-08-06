@@ -56,6 +56,56 @@ Route::group([
         'uses' => 'AnimeController@destroy',
         'as' => 'anime.destroy'
     ]);
+
+    Route::get('/acrud/{anime}/addch', [
+        'uses' => 'AnimeController@addch',
+        'as' => 'anime.addch'
+    ]);
+
+    Route::get('/acrud/{anime}/addcr', [
+        'uses' => 'AnimeController@addcr',
+        'as' => 'anime.addcr'
+    ]);
+
+    Route::post('/acrud/{anime}/createch', [
+        'uses' => 'AnimeController@createch',
+        'as' => 'anime.createch'
+    ]);
+
+    Route::post('/acrud/{anime}/createcr', [
+        'uses' => 'AnimeController@createcr',
+        'as' => 'anime.createcr'
+    ]);
+
+    Route::get('/acrud/{anime}/editch/{character}', [
+        'uses' => 'AnimeController@editch',
+        'as' => 'anime.editch'
+    ]);
+
+    Route::get('/acrud/{anime}/editcr/{creator}', [
+        'uses' => 'AnimeController@editcr',
+        'as' => 'anime.editcr'
+    ]);
+
+    Route::put('/acrud/{anime}/updatech/{character}', [
+        'uses' => 'AnimeController@updatech',
+        'as' => 'anime.updatech'
+    ]);
+
+    Route::put('/acrud/{anime}/updatecr/{creator}', [
+        'uses' => 'AnimeController@updatecr',
+        'as' => 'anime.updatecr'
+    ]);
+
+    Route::delete('/acrud/{anime}/destorych/{character}', [
+        'uses' => 'AnimeController@destroych',
+        'as' => 'anime.destroych'
+    ]);
+
+    Route::delete('/acrud/{anime}/destorycr/{creator}', [
+        'uses' => 'AnimeController@destroycr',
+        'as' => 'anime.destroycr'
+    ]);
 });
 
 /*

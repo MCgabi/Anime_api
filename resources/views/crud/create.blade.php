@@ -3,7 +3,13 @@
 @section('content')
 <div class="container">
    <h1>Welcom to the CURD of anime_api: </h1>  
-   <form action="{{ route('anime.add') }}" method="POST">
+   @if($errors->any())
+        @foreach($errors->all() as $error)
+            <div class="btn btn-danger">{{ $error }}</div>
+        @endforeach
+        <div class="mb-3"></div>
+    @endif
+    <form action="{{ route('anime.add') }}" method="POST">
     <input type="hidden" value="POST" name="_method">
     <input type="hidden" value="{{ csrf_token() }}" name="_token">
 
