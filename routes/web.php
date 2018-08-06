@@ -115,5 +115,18 @@ Route::group([
 Route::group([
 
 ], function () {
+    Route::get('/', [
+        'uses' => 'MainController@index',
+        'as' => 'main.index'
+    ]);
 
+    Route::get('/docs', [
+        'uses' => 'MainController@docs',
+        'as' => 'main.docs'
+    ]);
+
+    Route::get('/example', [
+        'uses' => 'MainController@example',
+        'as' => 'main.example'
+    ]);
 });
