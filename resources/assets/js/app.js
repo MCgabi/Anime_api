@@ -16,6 +16,9 @@ window.Vue = require('vue');
  */
 
 Vue.component('navbar', require('./components/navbar.vue'));
+Vue.component('scroll', require('./components/scroll.vue'));
+Vue.component('anime', require('./components/anime.vue'));
+
 
 const app = new Vue({
     el: '#app'

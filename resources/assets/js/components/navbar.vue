@@ -1,5 +1,5 @@
 <template>
-<nav class="navbar navbar-dark bg-dark ">
+<nav class="navbar navbar-dark bg-dark">
   <ul class="nav justify-content-end">
     <li class="nav-item">
       <a class="nav-link text-white" href="/">Home</a>

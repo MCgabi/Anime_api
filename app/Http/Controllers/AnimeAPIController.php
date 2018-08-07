@@ -26,6 +26,11 @@ class AnimeAPIController extends Controller
         return AnimeResource::collection($anime);
     }
 
+    public function animenew(){
+        $anime = Anime::orderBy('created_at', 'desc')->limit(5)->get();
+        return AnimeResource::collection($anime);
+    }
+
     /**
      * Display the specified resource.
      *
@@ -91,5 +96,7 @@ class AnimeAPIController extends Controller
         $creators = Creator::where('anime_id', $anime->id)->where('id', $creator->id)->get();
         return CreatorResource::collection($creators);
     }
+
+   
 
 }

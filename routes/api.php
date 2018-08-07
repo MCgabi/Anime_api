@@ -25,6 +25,7 @@ Route::group([
     */
 
     Route::get('anime', 'AnimeAPIController@index');
+    Route::get('animenew', 'AnimeAPIController@animenew');
     Route::get('anime/{anime}', 'AnimeAPIController@show');
 
     /*
