@@ -47510,7 +47510,7 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("li", { staticClass: "nav-item" }, [
           _c("a", { staticClass: "nav-link", attrs: { href: "#scroll2" } }, [
-            _vm._v("Anime")
+            _vm._v("Animes")
           ])
         ]),
         _vm._v(" "),

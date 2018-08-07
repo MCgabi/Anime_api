@@ -97,6 +97,24 @@ class AnimeAPIController extends Controller
         return CreatorResource::collection($creators);
     }
 
-   
+   public function showallch(){
+        $characters = Character::all();
+        return CharacterResource::collection($characters);
+   }
+
+   public function showallcr(){
+        $creators = Creator::all();
+        return CreatorResource::collection($creators);
+   }
+
+   public function showchbyid(Character $character){
+        $characters = Character::where('id', $character->id)->get();
+        return CharacterResource::collection($characters);
+   }
+
+    public function showcrbyid(Creator $creator){
+        $creators = Creator::where('id', $creator->id)->get();
+        return CreatorResource::collection($creators);
+   }
 
 }

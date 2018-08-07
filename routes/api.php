@@ -34,6 +34,8 @@ Route::group([
 
     Route::get('anime/{anime}/characters', 'AnimeAPIController@indexch');
     Route::get('anime/{anime}/character/{character}', 'AnimeAPIController@showch');
+    Route::get('characters/', 'AnimeAPIController@showallch');
+    Route::get('character/{character}', 'AnimeAPIController@showchbyid');
      
     /*
     * Routes to get creator for anime
@@ -41,5 +43,7 @@ Route::group([
 
     Route::get('anime/{anime}/creators', 'AnimeAPIController@indexcr');
     Route::get('anime/{anime}/creator/{creator}', 'AnimeAPIController@showcr');
+    Route::get('creators/', 'AnimeAPIController@showallcr');
+    Route::get('creator/{creator}', 'AnimeAPIController@showcrbyid');
 });
 
