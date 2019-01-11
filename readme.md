@@ -1,13 +1,17 @@
-# Anime_api is a developmenting api about anime
+## Anime_api is an api about anime.
 
-##  Setup: 
-Connect to the db in env file that i preper for you 	
+## Setup: 
+Connect to the db in env file.
 
 ## Run: 
 `php artisan migration`
+
 `php artisan db:seed`
+
 `php artisan serve`
+
 `npm install`
+
 `npm run watch`
   
 You can modify database in CRUD: localhost:8000/acrud/ 
