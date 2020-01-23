@@ -1,5 +1,9 @@
 ## Anime_api is an api about anime.
 
+[![Last commit](https://badgen.net/github/last-commit/mcgabi/anime_api)](https://github.com/mcgabi/anime_api)
+[![GitHub stars](https://badgen.net/github/stars/mcgabi/anime_api)](https://github.com/mcgabi/anime_api)
+[![License](https://badgen.net/github/license/mcgabi/anime_api)](https://github.com/mcgabi/anime_api/blob/master/LICENSE)
+
 ## Setup: 
 Connect to the db in env file.
 
